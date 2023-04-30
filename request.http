@@ -1,0 +1,33 @@
+GET http://localhost:3001
+
+###
+POST http://localhost:3001/register
+Content-Type: application/json
+
+{
+    "name":"MINH",
+    "phone": "0332060871",
+    "email": "minh@gmail.com",
+    "password": "1",
+    "age": 18,
+    "gender": "orther",
+    "address": "Tp.hcm"
+}
+
+###
+GET http://localhost:3001/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlYzdlZDMwM2FjYmFkMmYyYjg0YTEiLCJpYXQiOjE2ODI4ODQ1OTMsImV4cCI6MTY4Mjg5MTc5M30.FHVNSqjbEz9FulQLzfd3FWlG-rmRygUf8oBzhTvRq0E
+
+
+###
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "phone":"0332060870",
+    "password": "0"
+}
+
+###
+GET http://localhost:3001/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlY2NjODVmNDAyZjY0MzA5ZjYwNTciLCJpYXQiOjE2ODI4ODYxMDIsImV4cCI6MTY4Mjg5MzMwMn0.4RAHFX1IUYNF23NKA3XsR3THJV_LtKOcp6fXRWWSpNU
