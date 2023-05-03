@@ -1,14 +1,12 @@
-GET http://localhost:3001
-
 ###
 POST http://localhost:3001/register
 Content-Type: application/json
 
 {
-    "name":"MINH",
-    "phone": "0332060871",
-    "email": "minh@gmail.com",
-    "password": "1",
+    "name":"CAO",
+    "phone": "0332060870",
+    "email": "cao@gmail.com",
+    "password": "2",
     "age": 18,
     "gender": "orther",
     "address": "Tp.hcm"
@@ -16,18 +14,39 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3001/status
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlYzdlZDMwM2FjYmFkMmYyYjg0YTEiLCJpYXQiOjE2ODI4ODQ1OTMsImV4cCI6MTY4Mjg5MTc5M30.FHVNSqjbEz9FulQLzfd3FWlG-rmRygUf8oBzhTvRq0E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMwNzg4NjksImV4cCI6MTY4MzA4NjA2OX0.HGuDxtzBSgu4UQkvE3eZ5cps1OKq7aVg1ZTfQruSPzQ
+Content-Type: application/json
 
+{
+    "systemS": "0"
+}
 
 ###
 POST http://localhost:3001/login
 Content-Type: application/json
 
 {
-    "phone":"0332060870",
-    "password": "0"
+    "phone":"0332060875",
+    "password": "2"
 }
 
 ###
 GET http://localhost:3001/profile
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlY2NjODVmNDAyZjY0MzA5ZjYwNTciLCJpYXQiOjE2ODI4ODYxMDIsImV4cCI6MTY4Mjg5MzMwMn0.4RAHFX1IUYNF23NKA3XsR3THJV_LtKOcp6fXRWWSpNU
+
+
+###
+PUT http://localhost:3001/update-profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMwNzY5ODMsImV4cCI6MTY4MzA4NDE4M30.eUhhDbX2Pu6yKnTWEPqsEbdKvikQmbgbUMQK8I1mj7I
+Content-Type: application/json
+
+{
+    "name":"MINH CAO",
+    "phone": "0332060875",
+    "email": "minhminh@gmail.com",
+    "age": 18,
+    "gender": "orther",
+    "address": "Tp.hcm"
+}
+
+

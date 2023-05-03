@@ -107,6 +107,54 @@ class UserController {
             })
         }
     }
+
+    async updateProfile(req, res) {
+        const {name, phone, email, age, gender, address} = req.body
+        if (!name || !phone || !email ) {
+            return res.status(400).json({
+                success: false,
+                message: 'Missing name or phone or email or password'
+            })
+        }
+
+        try {
+            const currentUser = await User.findOne( {_id: req.userId} )
+            var user = await User.findOne({name})
+            if(user && JSON.stringify(currentUser) !== JSON.stringify(user)) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Username already taken'
+                })
+            }
+            user = await User.findOne({phone})
+            if(user && JSON.stringify(currentUser) !== JSON.stringify(user)) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Numberphone already taken'
+                })
+            }
+            user = await User.findOne({email})
+            if(user && JSON.stringify(currentUser) !== JSON.stringify(user)) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Email already taken'
+                })
+            }
+            const filter = {_id: req.userId}
+            const update = {name, phone, email, age, gender, address}
+            const userNow = await User.findOneAndUpdate(filter, update, {new: true})
+
+            res.json({
+                success: true,
+                message: 'User updated successfully',
+                userNow
+            })
+
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({success: false, message: 'Internal server error'})
+        }
+    }
 }
 
 module.exports = new UserController

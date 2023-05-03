@@ -18,7 +18,7 @@ function adafruit() {
         port: 1883,
         connectTimeout: 4000,
         username: 'minhcao2000',
-        password: 'aio_xUzu42ZHI68ZiLhdORDi8vVWCily',
+        password: '',
         reconnectPeriod: 1000,
     })
     
@@ -31,6 +31,7 @@ function adafruit() {
     
     client.on('message', (topic, message) => {
         console.log('Received Message:', topic, parseInt(message));
+        statusChange = true;
         if(!parseInt(message)){
             ledData = "1";
             buzzerData = "1";
