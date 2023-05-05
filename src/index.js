@@ -12,11 +12,13 @@ app.use(cors())
 
 const userRouter = require('./routes/user')
 const statusRouter = require('./routes/mqtt')
+const historyRouter = require('./routes/history')
 
 
 const PORT = 3001
 
 app.use('/status', statusRouter)
+app.use('/history', historyRouter)
 app.use('/', userRouter)
 
 

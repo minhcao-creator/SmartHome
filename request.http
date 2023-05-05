@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3001/status
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMwNzg4NjksImV4cCI6MTY4MzA4NjA2OX0.HGuDxtzBSgu4UQkvE3eZ5cps1OKq7aVg1ZTfQruSPzQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMyODc1NzUsImV4cCI6MTY4MzI5NDc3NX0.189kEAvpy-0V4_cloFMcM_R_9sK0QVsIGjYRkE6PfxQ
 Content-Type: application/json
 
 {
@@ -48,5 +48,30 @@ Content-Type: application/json
     "gender": "orther",
     "address": "Tp.hcm"
 }
+
+###
+DELETE http://localhost:3001/history/delete
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMxNDUyNDEsImV4cCI6MTY4MzE1MjQ0MX0.rTZ1HKOrz2IFfakA9Z2Id16qY-hA01dWcAEFxxoNDXE
+Content-Type: application/json
+
+{
+    "_id": "6451c5173248b4984b6464d9"
+}
+
+###
+DELETE http://localhost:3001/history/delete-many
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMyODgzNTgsImV4cCI6MTY4MzI5NTU1OH0.0O1kpPji1Q-gs9buJagWRO5KRHp4oGm2g9s7YsZnSZ0
+Content-Type: application/json
+
+{
+    "ids" : ["6454f0036fcb102fbd17a550", "6454f0076fcb102fbd17a552", "6454f0086fcb102fbd17a554"]
+}
+
+###
+DELETE http://localhost:3001/history/delete-all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDUxYjc2ZTlhOWIyOWUzZmZkZDE3NjIiLCJpYXQiOjE2ODMyODc1NzUsImV4cCI6MTY4MzI5NDc3NX0.189kEAvpy-0V4_cloFMcM_R_9sK0QVsIGjYRkE6PfxQ
+Content-Type: application/json
+
+{}
 
 
